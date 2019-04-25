@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  has_many :leasable
+  leasable
 
   alias_attribute :full_name, :name
 end
