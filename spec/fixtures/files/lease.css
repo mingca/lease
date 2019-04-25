@@ -1,0 +1,115 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Arial", san-serif;
+    color: black;
+    font-size: 1.3em;
+    margin: 2.5em;
+}
+
+.header {
+    padding: .75em 0 .75em 0; 
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.subheader {
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background: black;
+}
+
+.signatureLine {
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background: black;
+    text-align: left;
+    margin-left: 0;
+}
+
+.descriptionLine {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background: black;
+    margin-bottom: 1.3em;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    line-height: 1.4em;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.collection {
+    margin-top: 1.2em;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.gatecode {
+    color: red;
+}
+
+p {
+    padding-left: 0;
+    text-indent: 0;
+    text-align: left;
+    line-height: 1.2em;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.termsList {
+    padding-left: 0;
+    text-indent: 0;
+    text-align: left;
+    line-height: 1.2em;
+    list-style-position: inside;
+}
+
+.termsList ol li::before {
+    font-weight: bold;
+}
+
+li ol.upperAlphaList li {
+    display:list-item;
+    list-style-type: upper-alpha;
+    list-style-position: outside;
+}
+
+li li ol.lowerAlphaList li {
+    display:list-item;
+    list-style-type: lower-alpha;
+}
+
+li ol.nestedOrderedList li {
+    display:list-item;
+    list-style-type: decimal;
+}

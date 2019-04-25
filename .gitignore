@@ -1,0 +1,15 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+tmp/
+log/
+docusign-*.gem
+*.bak
+*.sqlite3
+.byebug_history
+/uploads/
+/spec/railsapp/public/uploads/*
