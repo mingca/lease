@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
-  leasable
+  lease_envelopable
+  lease_signable
 
   alias_attribute :full_name, :name
 end

@@ -55,4 +55,10 @@ describe Lease::Envelope do
 			expect(envelope.signed_pdf).to be_present
 		end
 	end
+
+	context 'has_unsigned_lease?' do
+		it 'should return true' do
+			expect(user.has_unsigned_lease?).to be_truthy
+		end
+	end
 end

@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['ninjarailsdev@gmail.com']
 
   spec.summary       = %q{Lease templates and envelopes}
-  spec.homepage      = 'https://www.github.com/lease'
-  spec.license       = 'GPL-3.0'
+  spec.homepage      = 'https://www.github.com/mingca/lease.git'
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})

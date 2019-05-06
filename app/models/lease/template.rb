@@ -6,5 +6,7 @@ module Lease
     has_many :envelopes
 
     validates :html_file, presence: true
+    validates :state, presence: true, uniqueness: true
+
   end
 end

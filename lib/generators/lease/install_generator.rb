@@ -23,6 +23,7 @@ Lease.setup do |config|
   config.lessee_sign_key = :tenant_full_name
 
 end
+
 FileUtils.mkdir_p "#{Rails.root}/tmp/pdf_lease_documents"
 CONTENT
       end

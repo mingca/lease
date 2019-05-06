@@ -1,16 +1,48 @@
 # Lease
 
-Trying to simplify the lease pdf/html management
+Simplify the lease pdf/html management. Specially designed for a real estate self-storage project.
 
 ## Usage
+1. `rails g lease:install`
+`rake db:migrate`
 
-On any model you want to treat as a "signer" of an envelope/template, add `leasable` to create an association to both envelopes and templates:
-
+2. On any model you want to treat as a "signer" of an envelope/template, add `lease_signable`:
 ```ruby
 class User < ApplicationRecord
 
-  leasable
+  lease_signable
 
+end
+```
+3. On any model you want treat as a leasing property, add `lease_envelopable`:
+```ruby
+class Occupancy < ApplicationRecord
+
+  lease_envelopable
+
+end
+```
+4. You can now call some methods like:
+```ruby
+user = User.new(full_name:'Jason Smolar') # the signable model
+occupancy = Occupancy.new # the leasable model
+template = Lease::Template.create(state: 'CA', template: File.open('/tmp/ca_lease_template.html'))
+envelope = user.create_envelope(template: template, envelopable: occupancy)
+vars = { # hash of variables to be interpolated into html file. Pass html id to hash key.
+  rental_price: '$12', # there should be a html DOM in the template file with the id 'rental_price'
+  ...
+}
+if user.has_unsigned_lease?
+  envelope = user.envelopes.unsigned.first
+  envelope.unsigned_html(vars) # returns html without tenant sign
+  envelope.with_unsigned_pdf(vars) do |pdf_file|
+    pdf_file.read # pdf_file is temporary use only and will be deleted after this block
+  end
+  envelope.unsigned? # true
+  # Generate and returns the signed pdf. PDF is stored in 
+  envelope.sign(vars)
+  envelope.signed_pdf # Carrierwave::Storage::File
+  envelope.signed? # true
 end
 ```
 ## Development
@@ -25,5 +57,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/mingca
 
 ## License
 
-The gem is available as open source under the terms of the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html).
+The gem is available as open source under the terms of the [MIT](https://opensource.org/licenses/MIT).
 
