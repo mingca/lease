@@ -1,5 +1,5 @@
 # Lease
-
+[![Gem Version](https://badge.fury.io/rb/lease.svg)](https://badge.fury.io/rb/lease)
 Simplify the lease pdf/html management. Specially designed for a real estate self-storage project.
 
 ## Usage
