@@ -49,7 +49,7 @@ module Lease
           spans = page.css("[id=\"#{dom_id}\"]")
           if spans.present?
             spans.each do |span|
-              span.content = value
+              span.inner_html = value&.to_s&.html_safe
             end
           else
             Rails.logger.info "Lease Envelope #{self.id}: dom id #{dom_id} not found in template"
