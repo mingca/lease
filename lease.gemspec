@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'wkhtmltopdf-binary', '~> 0.12.3.1'
 
   spec.add_development_dependency 'bundler', '~> 1.17.3'
-  spec.add_development_dependency 'rake', '~> 12.3'
+  spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.7'
   spec.add_development_dependency 'rspec-rails', '~> 3.7'
   spec.add_development_dependency 'factory_bot_rails', '~> 4.8'
