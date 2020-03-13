@@ -22,7 +22,7 @@ module Lease
     def sign(vars)
       return nil if signed?
 
-      html = interpolate(with_sign(vars))
+      html = interpolate(vars)
       with_generate_pdf(html) do |temp_pdf|
         update(signed_pdf: temp_pdf, status: :signed)
       end
@@ -60,10 +60,6 @@ module Lease
 
       def with_blank_sign(vars)
         vars.merge(Lease.config.lessee_sign_key => '')
-      end
-
-      def with_sign(vars)
-        vars.merge(Lease.config.lessee_sign_key => signable.full_name) if signable&.full_name.present?
       end
 
   end
