@@ -59,7 +59,7 @@ module Lease
       end
 
       def with_blank_sign(vars)
-        vars.merge(Lease.config.lessee_sign_key => '')
+        vars.without(Lease.config.lessee_sign_key)
       end
 
   end
