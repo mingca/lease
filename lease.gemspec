@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'rails', '~> 5'
-  spec.add_dependency 'carrierwave', '~> 1.0'
+  spec.add_dependency 'carrierwave', '>= 1', '< 3'
   spec.add_dependency 'wicked_pdf', '~> 1.1.0'
   spec.add_dependency 'wkhtmltopdf-binary', '~> 0.12.3.1'
 
