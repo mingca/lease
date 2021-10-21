@@ -32,7 +32,7 @@ module Lease
 
       def with_generate_pdf(html)
         random = SecureRandom.hex(4)
-        pdf_string = WickedPdf.new.pdf_from_string(html, extra: '--enable-forms')
+        pdf_string = WickedPdf.new.pdf_from_string(html, extra: '--enable-forms', footer: { right: "v#{template.version rescue nil}" })
         pdf_file_name = Rails.root.join('tmp', 'pdf_lease_documents', "pdf-lease-#{envelopable.id}-#{random}.pdf")
         pdf_file = File.new(pdf_file_name, 'a+:ASCII-8BIT')
         pdf_file.write(pdf_string)
